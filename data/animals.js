@@ -1,14 +1,17 @@
 module.exports = [
   {
-    name: 'bessie',
-    cool_factor: 3,
+    id: 1,
+    todo: 'wash the dishes',
+    completed: false,
   },
   {
-    name: 'jumpy',
-    cool_factor: 4,
+    id: 2,
+    todo: 'take out trash',
+    completed: false,
   },
   {
-    name: 'spot',
-    cool_factor: 10,
+    id: 3,
+    todo: 'walk dog',
+    completed: false,
   }
 ];
