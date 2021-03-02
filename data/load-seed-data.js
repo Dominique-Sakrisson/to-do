@@ -28,7 +28,7 @@ async function run() {
       todos.map(todo => {
         return client.query(`
                     INSERT INTO todos (id, todo, completed, owner_id)
-                    VALUES ($1, $2, $3,$4);
+                    VALUES ($1, $2, $3, $4);
                 `,
         [todo.id, todo.todo, todo.completed, user.id]);
       })
