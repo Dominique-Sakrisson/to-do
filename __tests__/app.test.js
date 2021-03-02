@@ -37,39 +37,22 @@ describe('app routes', () => {
         {
             "id": 1,
             "todo": "wash the dishes",
-            "completed": true,
+            "completed": false,
             "owner_id": 1
         },
         {
             "id": 2,
             "todo": "take out trash",
-            "completed": true,
+            "completed": false,
             "owner_id": 1
         },
         {
             "id": 3,
             "todo": "walk dog",
-            "completed": true,
+            "completed": false,
             "owner_id": 1
-        },
-        {
-            "id": 6,
-            "todo": "wash car",
-            "completed": false,
-            "owner_id": 2
-        },
-        {
-            "id": 5,
-            "todo": "laundry",
-            "completed": false,
-            "owner_id": 2
-        },
-        {
-            "id": 7,
-            "todo": "mow yard",
-            "completed": true,
-            "owner_id": 2
         }
+    
     ];
 
       const data = await fakeRequest(app)
@@ -80,4 +63,43 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
   });
+
+  // test('returns the single users tasks', async() => {
+
+  //   const expectation = [
+  //     {
+  //         "id": 1,
+  //         "todo": "wash the dishes",
+  //         "completed": false,
+  //         "owner_id": 1
+  //     },
+  //     {
+  //         "id": 2,
+  //         "todo": "take out trash",
+  //         "completed": false,
+  //         "owner_id": 1
+  //     },
+  //     {
+  //         "id": 3,
+  //         "todo": "walk dog",
+  //         "completed": false,
+  //         "owner_id": 1
+  //     },
+  //     {
+  //       "id": 4,
+  //       "todo": "walk roco the dogo",
+  //       "completed": false,
+  //       "owner_id": 2
+  //   }
+  
+  // ];
+
+  //   const data = await fakeRequest(app)
+  //     .get('/todos/currentUser')
+  //     .expect('Content-Type', /json/)
+  //     .expect(200);
+
+  //   expect(data.body).toEqual(expectation);
+  // });
 });
+
