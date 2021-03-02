@@ -31,31 +31,49 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test('returns animals', async() => {
+    test('returns the different todos by all users', async() => {
 
       const expectation = [
         {
-          'id': 1,
-          'name': 'bessie',
-          'coolfactor': 3,
-          'owner_id': 1
+            "id": 1,
+            "todo": "wash the dishes",
+            "completed": true,
+            "owner_id": 1
         },
         {
-          'id': 2,
-          'name': 'jumpy',
-          'coolfactor': 4,
-          'owner_id': 1
+            "id": 2,
+            "todo": "take out trash",
+            "completed": true,
+            "owner_id": 1
         },
         {
-          'id': 3,
-          'name': 'spot',
-          'coolfactor': 10,
-          'owner_id': 1
+            "id": 3,
+            "todo": "walk dog",
+            "completed": true,
+            "owner_id": 1
+        },
+        {
+            "id": 6,
+            "todo": "wash car",
+            "completed": false,
+            "owner_id": 2
+        },
+        {
+            "id": 5,
+            "todo": "laundry",
+            "completed": false,
+            "owner_id": 2
+        },
+        {
+            "id": 7,
+            "todo": "mow yard",
+            "completed": true,
+            "owner_id": 2
         }
-      ];
+    ];
 
       const data = await fakeRequest(app)
-        .get('/animals')
+        .get('/todos')
         .expect('Content-Type', /json/)
         .expect(200);
 
