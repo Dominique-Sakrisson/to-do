@@ -35,25 +35,25 @@ describe('app routes', () => {
 
       const expectation = [
         {
-            "id": 1,
-            "todo": "wash the dishes",
-            "completed": false,
-            "owner_id": 1
+          'id': 1,
+          'todo': 'wash the dishes',
+          'completed': false,
+          'owner_id': 1
         },
         {
-            "id": 2,
-            "todo": "take out trash",
-            "completed": false,
-            "owner_id": 1
+          'id': 2,
+          'todo': 'take out trash',
+          'completed': false,
+          'owner_id': 1
         },
         {
-            "id": 3,
-            "todo": "walk dog",
-            "completed": false,
-            "owner_id": 1
+          'id': 3,
+          'todo': 'walk dog',
+          'completed': false,
+          'owner_id': 1
         }
     
-    ];
+      ];
 
       const data = await fakeRequest(app)
         .get('/todos')
